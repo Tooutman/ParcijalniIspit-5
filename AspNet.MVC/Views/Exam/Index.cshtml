@@ -22,9 +22,13 @@
         </tr>
     </thead>
     <tbody>
+        @{
+            int index = 1;
+        }
         @foreach (var item in Model)
         {
-            <tr>
+            var stil = index % 2 == 0 ? "background-color:lightblue" : "";
+            <tr style="@stil">
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
@@ -35,6 +39,7 @@
                     @Html.DisplayFor(modelItem => item.Pages)
                 </td>
             </tr>
+            index++;
         }
     </tbody>
 </table>
